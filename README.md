@@ -1,60 +1,38 @@
-## How can I edit this code?
+# Well Insurance Company
 
-There are several ways of editing This application.
+> ⚠️ **This is a college project demonstration. Not intended for actual medical claim processing.**
 
-**Use your preferred IDE**
+## 👥 Our Team Members
 
-If you want to work locally using your own IDE, you can clone this repo and push changes.
+- Ganesh Kumar C  
+- Praveen SM  
+- Sanjai K  
+- Dennis Dsouza  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
+
+## ✏️ How Can I Edit This Code?
+
+There are several ways to edit and work with this application:
+
+### ✅ Use Your Preferred IDE
+
+If you prefer working locally, you can easily clone the repository and get started with your favorite code editor.
+
+> **Prerequisite:** Make sure you have Node.js & npm installed.  
+> We recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to manage Node versions.
 
 Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Step 1: Clone the repository using the Git URL.
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Step 2: Navigate into the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install project dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server.
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Way Of Deploy : Using Google Drive, One Drive, Versel, Web hosting etc.,
-
-For More Information Contact
-Contact : +91 787193594
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we here to help and Teach You. 
