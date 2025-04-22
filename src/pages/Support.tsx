@@ -180,10 +180,10 @@ const Support = () => {
                 <div>
                   <h4 className="font-medium">Student Support Team</h4>
                   <div className="text-muted-foreground">
-                    <p>Ganesh Kumar C (412721205011)</p>
-                    <p>Praveen SM (412721205033)</p>
-                    <p>Sanjai K (412721205041)</p>
-                    <p>Dennis D Souza (412721205008)</p>
+                    <p>Ganesh Kumar C</p>
+                    <p>Praveen SM</p>
+                    <p>Sanjai K</p>
+                    <p>Dennis D Souza</p>
                   </div>
                 </div>
               </div>
