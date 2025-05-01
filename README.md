@@ -1,3 +1,4 @@
+
 ## How can I edit this code?
 
 There are several ways of editing This application.
@@ -47,14 +48,3 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Way Of Deploy : Using Google Drive, One Drive, Versel, Web hosting etc.,
-
-For More Information Contact
-Contact : +91 787193594
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we here to help and Teach You. 
