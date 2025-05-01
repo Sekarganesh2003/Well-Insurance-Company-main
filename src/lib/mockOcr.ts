@@ -22,86 +22,90 @@ export const processDocumentOcr = async (file: File): Promise<OcrExtractedData> 
   await delay(1500);
   
   // Mock extracted data with different confidence levels
-  const extractedData: OcrExtractedData = {
-    patientName: 'John Patient',
-    patientId: '1',
-    hospitalName: 'City General Hospital',
-    diagnosis: 'Acute Bronchitis',
-    diagnosisCode: 'J20.9',
-    treatmentDetails: 'Consultation, chest X-ray, prescription for antibiotics and bronchodilators',
-    claimAmount: 475.50,
-    serviceDate: '2025-04-10',
-    confidence: {
-      patientName: 0.95,
-      patientId: 0.97,
-      hospitalName: 0.92,
-      diagnosis: 0.88,
-      diagnosisCode: 0.94,
-      treatmentDetails: 0.82,
-      claimAmount: 0.90,
-      serviceDate: 0.96
+  const extractedData: OcrExtractedData[] = [
+    {
+      patientName: 'John Patient',
+      patientId: '1',
+      hospitalName: 'City General Hospital',
+      diagnosis: 'Acute Bronchitis',
+      diagnosisCode: 'J20.9',
+      treatmentDetails: 'Consultation, chest X-ray, prescription for antibiotics and bronchodilators',
+      claimAmount: 475.50,
+      serviceDate: '2025-04-10',
+      confidence: {
+        patientName: 0.95,
+        patientId: 0.97,
+        hospitalName: 0.92,
+        diagnosis: 0.88,
+        diagnosisCode: 0.94,
+        treatmentDetails: 0.82,
+        claimAmount: 0.90,
+        serviceDate: 0.96
+      }
+    },
+    {
+      patientName: 'Alice Roberts',
+      patientId: '2',
+      hospitalName: 'Green Valley Hospital',
+      diagnosis: 'Pneumonia',
+      diagnosisCode: 'J18.9',
+      treatmentDetails: 'Antibiotics, oxygen therapy, hydration',
+      claimAmount: 620.75,
+      serviceDate: '2025-04-12',
+      confidence: {
+        patientName: 0.94,
+        patientId: 0.98,
+        hospitalName: 0.91,
+        diagnosis: 0.87,
+        diagnosisCode: 0.92,
+        treatmentDetails: 0.80,
+        claimAmount: 0.89,
+        serviceDate: 0.95
+      }
+    },
+    {
+      patientName: 'David Kumar',
+      patientId: '3',
+      hospitalName: 'Lakeview Medical Center',
+      diagnosis: 'Hypertension',
+      diagnosisCode: 'I10',
+      treatmentDetails: 'Blood pressure monitoring, lifestyle changes, medication prescribed',
+      claimAmount: 300.00,
+      serviceDate: '2025-04-15',
+      confidence: {
+        patientName: 0.96,
+        patientId: 0.99,
+        hospitalName: 0.90,
+        diagnosis: 0.89,
+        diagnosisCode: 0.93,
+        treatmentDetails: 0.85,
+        claimAmount: 0.88,
+        serviceDate: 0.97
+      }
+    },
+    {
+      patientName: 'Priya Singh',
+      patientId: '4',
+      hospitalName: 'Silver Oaks Hospital',
+      diagnosis: 'Type 2 Diabetes',
+      diagnosisCode: 'E11.9',
+      treatmentDetails: 'Blood sugar monitoring, insulin therapy, dietary consultation',
+      claimAmount: 520.40,
+      serviceDate: '2025-04-18',
+      confidence: {
+        patientName: 0.97,
+        patientId: 0.98,
+        hospitalName: 0.93,
+        diagnosis: 0.90,
+        diagnosisCode: 0.95,
+        treatmentDetails: 0.83,
+        claimAmount: 0.91,
+        serviceDate: 0.94
+      }
     }
-  };
-  const extractedData: OcrExtractedData = {
-    patientName: 'Alice Roberts',
-    patientId: '2',
-    hospitalName: 'Metro Care',
-    diagnosis: 'Knee Replacement Surgery',
-    diagnosisCode: 'Z96.651',
-    treatmentDetails: 'Total knee replacement followed by physiotherapy sessions',
-    claimAmount: 18000.00,
-    serviceDate: '2025-03-22',
-    confidence: {
-      patientName: 0.94,
-      patientId: 0.96,
-      hospitalName: 0.91,
-      diagnosis: 0.87,
-      diagnosisCode: 0.93,
-      treatmentDetails: 0.85,
-      claimAmount: 0.89,
-      serviceDate: 0.95
-    }
-  };
-  const extractedData: OcrExtractedData = {
-    patientName: 'David Kumar',
-    patientId: '3',
-    hospitalName: 'Sunrise Health',
-    diagnosis: 'Cosmetic Rhinoplasty',
-    diagnosisCode: 'Z41.1',
-    treatmentDetails: 'Elective cosmetic surgery for nasal reshaping',
-    claimAmount: 6000.00,
-    serviceDate: '2025-02-18',
-    confidence: {
-      patientName: 0.93,
-      patientId: 0.95,
-      hospitalName: 0.90,
-      diagnosis: 0.86,
-      diagnosisCode: 0.91,
-      treatmentDetails: 0.84,
-      claimAmount: 0.88,
-      serviceDate: 0.94
-    }
-  };
-  const extractedData: OcrExtractedData = {
-    patientName: 'Priya Singh',
-    patientId: '4',
-    hospitalName: 'GreenLife Clinic',
-    diagnosis: 'General Health Checkup',
-    diagnosisCode: 'Z00.00',
-    treatmentDetails: 'Annual health checkup including blood test, ECG, and physician consultation',
-    claimAmount: 120.00,
-    serviceDate: '2025-04-01',
-    confidence: {
-      patientName: 0.96,
-      patientId: 0.98,
-      hospitalName: 0.93,
-      diagnosis: 0.89,
-      diagnosisCode: 0.95,
-      treatmentDetails: 0.86,
-      claimAmount: 0.91,
-      serviceDate: 0.97
-    }
-  };
+  ];
+  
+
   return extractedData;
 };
 
