@@ -42,7 +42,66 @@ export const processDocumentOcr = async (file: File): Promise<OcrExtractedData> 
       serviceDate: 0.96
     }
   };
-
+  const extractedData: OcrExtractedData = {
+    patientName: 'Alice Roberts',
+    patientId: '2',
+    hospitalName: 'Metro Care',
+    diagnosis: 'Knee Replacement Surgery',
+    diagnosisCode: 'Z96.651',
+    treatmentDetails: 'Total knee replacement followed by physiotherapy sessions',
+    claimAmount: 18000.00,
+    serviceDate: '2025-03-22',
+    confidence: {
+      patientName: 0.94,
+      patientId: 0.96,
+      hospitalName: 0.91,
+      diagnosis: 0.87,
+      diagnosisCode: 0.93,
+      treatmentDetails: 0.85,
+      claimAmount: 0.89,
+      serviceDate: 0.95
+    }
+  };
+  const extractedData: OcrExtractedData = {
+    patientName: 'David Kumar',
+    patientId: '3',
+    hospitalName: 'Sunrise Health',
+    diagnosis: 'Cosmetic Rhinoplasty',
+    diagnosisCode: 'Z41.1',
+    treatmentDetails: 'Elective cosmetic surgery for nasal reshaping',
+    claimAmount: 6000.00,
+    serviceDate: '2025-02-18',
+    confidence: {
+      patientName: 0.93,
+      patientId: 0.95,
+      hospitalName: 0.90,
+      diagnosis: 0.86,
+      diagnosisCode: 0.91,
+      treatmentDetails: 0.84,
+      claimAmount: 0.88,
+      serviceDate: 0.94
+    }
+  };
+  const extractedData: OcrExtractedData = {
+    patientName: 'Priya Singh',
+    patientId: '4',
+    hospitalName: 'GreenLife Clinic',
+    diagnosis: 'General Health Checkup',
+    diagnosisCode: 'Z00.00',
+    treatmentDetails: 'Annual health checkup including blood test, ECG, and physician consultation',
+    claimAmount: 120.00,
+    serviceDate: '2025-04-01',
+    confidence: {
+      patientName: 0.96,
+      patientId: 0.98,
+      hospitalName: 0.93,
+      diagnosis: 0.89,
+      diagnosisCode: 0.95,
+      treatmentDetails: 0.86,
+      claimAmount: 0.91,
+      serviceDate: 0.97
+    }
+  };
   return extractedData;
 };
 
