@@ -25,7 +25,11 @@ const mockPatients: Patient[] = [
   { id: "P005", name: "David Kumar", age: 42, gender: "Male", phone: "9876543214", insuranceId: "INS98769", lastVisit: "2025-03-30" },
   { id: "P006", name: "Priya Sharma", age: 29, gender: "Female", phone: "9876543215", insuranceId: "INS98770", lastVisit: "2025-04-05" },
   { id: "P007", name: "Rajesh Patel", age: 51, gender: "Male", phone: "9876543216", insuranceId: "INS98771", lastVisit: "2025-03-18" },
+  { id: "P008", name: "Alice Roberts", age: 37, gender: "Female", phone: "9876543217", insuranceId: "INS98772", lastVisit: "2025-04-10" },
+  { id: "P009", name: "David Kumar", age: 42, gender: "Male", phone: "9876543218", insuranceId: "INS98773", lastVisit: "2025-04-12" },
+  { id: "P010", name: "Priya Singh", age: 31, gender: "Female", phone: "9876543219", insuranceId: "INS98774", lastVisit: "2025-04-14" }
 ];
+
 
 const PatientRecordsTable = () => {
   const navigate = useNavigate();

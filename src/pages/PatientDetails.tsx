@@ -62,8 +62,63 @@ const mockPatientDetails = {
     insuranceProvider: "MediCare India",
     registrationDate: "2024-08-05",
     lastVisit: "2025-03-25"
+  },
+  P005: {
+    id: "P005",
+    name: "David Kumar",
+    age: 42,
+    gender: "Male",
+    dob: "1983-11-20",
+    phone: "9876543214",
+    email: "david.kumar@example.com",
+    address: "22 Residency Road, Chennai, India",
+    emergencyContact: "Anita Kumar (Wife) - 9876543215",
+    bloodGroup: "AB+",
+    allergies: "None",
+    chronicConditions: "High Cholesterol",
+    insuranceId: "INS98769",
+    insuranceProvider: "LifeCare Insurance",
+    registrationDate: "2024-11-10",
+    lastVisit: "2025-03-30"
+  },
+  P008: {
+    id: "P008",
+    name: "Alice Roberts",
+    age: 36,
+    gender: "Female",
+    dob: "1989-06-12",
+    phone: "9876543217",
+    email: "alice.roberts@example.com",
+    address: "Plot 5, MG Road, Pune, India",
+    emergencyContact: "Thomas Roberts (Husband) - 9876543218",
+    bloodGroup: "A-",
+    allergies: "Peanuts",
+    chronicConditions: "Thyroid",
+    insuranceId: "INS98772",
+    insuranceProvider: "SafeHealth",
+    registrationDate: "2024-10-01",
+    lastVisit: "2025-04-10"
+  },
+  P009: {
+    id: "P009",
+    name: "Priya Singh",
+    age: 28,
+    gender: "Female",
+    dob: "1997-02-18",
+    phone: "9876543219",
+    email: "priya.singh@example.com",
+    address: "8 Sector 21, Noida, India",
+    emergencyContact: "Ravi Singh (Brother) - 9876543220",
+    bloodGroup: "B+",
+    allergies: "Dust mites",
+    chronicConditions: "PCOD",
+    insuranceId: "INS98773",
+    insuranceProvider: "CarePlus India",
+    registrationDate: "2024-12-05",
+    lastVisit: "2025-04-12"
   }
 };
+
 
 const PatientDetails = () => {
   const { patientId } = useParams<{ patientId: string }>();

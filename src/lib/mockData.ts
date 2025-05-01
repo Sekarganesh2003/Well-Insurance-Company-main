@@ -170,6 +170,90 @@ export const mockClaims: Claim[] = [
       isWithinClaimLimit: true,
       issues: ['Policy expired on 2025-03-01']
     }
+  },
+  {
+    id: 'C006',
+    patientId: '4',
+    patientName: 'Alice Roberts',
+    hospitalId: '2',
+    hospitalName: 'City General Hospital',
+    diagnosisCode: 'R50.9',
+    diagnosis: 'Fever, unspecified',
+    treatmentDetails: 'Blood tests, consultation, fever medication',
+    documentUrls: ['/placeholder.svg'],
+    claimAmount: 400.00,
+    status: 'approved',
+    submittedDate: '2025-04-12T10:00:00Z',
+    updatedDate: '2025-04-14T12:15:00Z',
+    comments: [
+      {
+        id: 'CM003',
+        userId: '3',
+        userName: 'Admin User',
+        userRole: 'admin',
+        text: 'Claim approved after verifying fever-related treatment was covered.',
+        timestamp: '2025-04-14T12:15:00Z'
+      }
+    ],
+    policyVerification: {
+      isPolicyCurrent: true,
+      isTreatmentCovered: true,
+      isWithinClaimLimit: true,
+      remainingCoverage: 4600.00
+    }
+  },
+  {
+    id: 'C007',
+    patientId: '5',
+    patientName: 'David Kumar',
+    hospitalId: '2',
+    hospitalName: 'City General Hospital',
+    diagnosisCode: 'I10',
+    diagnosis: 'Essential (primary) hypertension',
+    treatmentDetails: 'Blood pressure monitoring, medication prescription',
+    documentUrls: ['/placeholder.svg'],
+    claimAmount: 950.00,
+    status: 'rejected',
+    submittedDate: '2025-04-16T09:30:00Z',
+    updatedDate: '2025-04-17T11:00:00Z',
+    comments: [
+      {
+        id: 'CM004',
+        userId: '3',
+        userName: 'Admin User',
+        userRole: 'admin',
+        text: 'Claim rejected due to incomplete medical documents.',
+        timestamp: '2025-04-17T11:00:00Z'
+      }
+    ],
+    policyVerification: {
+      isPolicyCurrent: true,
+      isTreatmentCovered: true,
+      isWithinClaimLimit: false,
+      issues: ['Missing consultation report and prescription']
+    }
+  },
+  {
+    id: 'C008',
+    patientId: '6',
+    patientName: 'Priya Singh',
+    hospitalId: '2',
+    hospitalName: 'City General Hospital',
+    diagnosisCode: 'N39.0',
+    diagnosis: 'Urinary tract infection, site not specified',
+    treatmentDetails: 'Urine test, antibiotics prescription',
+    documentUrls: ['/placeholder.svg'],
+    claimAmount: 320.00,
+    status: 'pending',
+    submittedDate: '2025-04-20T08:20:00Z',
+    updatedDate: '2025-04-20T08:20:00Z',
+    comments: [],
+    policyVerification: {
+      isPolicyCurrent: true,
+      isTreatmentCovered: true,
+      isWithinClaimLimit: true,
+      remainingCoverage: 4680.00
+    }
   }
 ];
 

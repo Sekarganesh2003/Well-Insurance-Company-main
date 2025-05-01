@@ -80,8 +80,33 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           email: 'admin@example.com',
           role: 'admin',
           status: 'approved'
+        },
+        {
+          id: '4',
+          name: 'Alice Roberts',
+          email: 'alice.roberts@example.com',
+          role: 'patient',
+          status: 'approved',
+          policyNumber: 'POL-654321'
+        },
+        {
+          id: '5',
+          name: 'David Kumar',
+          email: 'david.kumar@example.com',
+          role: 'patient',
+          status: 'approved',
+          policyNumber: 'POL-654322'
+        },
+        {
+          id: '6',
+          name: 'Priya Singh',
+          email: 'priya.singh@example.com',
+          role: 'patient',
+          status: 'approved',
+          policyNumber: 'POL-654323'
         }
       ];
+      
       setAllUsers(initialUsers);
       localStorage.setItem('allUsers', JSON.stringify(initialUsers));
     }

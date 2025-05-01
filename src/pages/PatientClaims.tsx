@@ -22,7 +22,10 @@ const patientNames: Record<string, string> = {
   "P12345": "John Smith",
   "P67890": "Jane Anderson",
   "P24680": "Michael Johnson",
+  "P008": "Alice Roberts",
+  "P009": "Priya Singh"
 };
+
 
 const PatientClaims = () => {
   const { patientId } = useParams<{ patientId: string }>();

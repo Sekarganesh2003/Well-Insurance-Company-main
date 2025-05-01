@@ -81,7 +81,38 @@ const mockAppointments: Appointment[] = [
     status: "scheduled",
     doctorName: "Dr. Khan"
   },
+  {
+    id: "A007",
+    patientId: "P008",
+    patientName: "Alice Roberts",
+    date: "2025-04-17",
+    time: "10:45",
+    purpose: "Initial consultation",
+    status: "scheduled",
+    doctorName: "Dr. Mehta"
+  },
+  {
+    id: "A008",
+    patientId: "P009",
+    patientName: "David Kumar",
+    date: "2025-04-17",
+    time: "13:00",
+    purpose: "Orthopedic check",
+    status: "scheduled",
+    doctorName: "Dr. Reddy"
+  },
+  {
+    id: "A009",
+    patientId: "P010",
+    patientName: "Priya Singh",
+    date: "2025-04-18",
+    time: "11:15",
+    purpose: "Dermatology review",
+    status: "scheduled",
+    doctorName: "Dr. Banerjee"
+  }
 ];
+
 
 const AppointmentsList = () => {
   const [filter, setFilter] = useState<string>("all");
