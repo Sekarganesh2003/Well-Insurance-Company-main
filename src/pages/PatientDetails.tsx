@@ -166,7 +166,7 @@ const PatientDetails = () => {
         <div className="flex gap-2">
           <Button 
             variant="outline" 
-            onClick={() => navigate(/patient/{patientId}/claims)}
+            onClick={() => navigate(/patient/${patientId}/claims)}
           >
             <FileText className="h-4 w-4 mr-2" />
             View Claims
