@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -166,7 +167,7 @@ const PatientDetails = () => {
         <div className="flex gap-2">
           <Button 
             variant="outline" 
-            onClick={() => navigate(/patient/${patientId}/claims)}
+            onClick={() => navigate(`/patient/${patientId}/claims`)}
           >
             <FileText className="h-4 w-4 mr-2" />
             View Claims
@@ -297,20 +298,4 @@ const PatientDetails = () => {
   );
 };
 
-export default PatientDetails;" for examble if i uplode John_Patient_details.pdf shown the result of "patientName: 'John Patient',
-    patientId: '1',
-    hospitalName: 'City General Hospital',
-    diagnosis: 'Acute Bronchitis',
-    diagnosisCode: 'J20.9',
-    treatmentDetails: 'Consultation, chest X-ray, prescription for antibiotics and bronchodilators',
-    claimAmount: 475.50,
-    serviceDate: '2025-04-10',
-    confidence: {
-      patientName: 0.95,
-      patientId: 0.97,
-      hospitalName: 0.92,
-      diagnosis: 0.88,
-      diagnosisCode: 0.94,
-      treatmentDetails: 0.82,
-      claimAmount: 0.90,
-      serviceDate: 0.96
+export default PatientDetails;
