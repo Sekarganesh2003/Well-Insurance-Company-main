@@ -313,4 +313,4 @@ export default PatientDetails;" for examble if i uplode John_Patient_details.pdf
       diagnosisCode: 0.94,
       treatmentDetails: 0.82,
       claimAmount: 0.90,
-      serviceDate: 0.96"
+      serviceDate: 0.96
