@@ -1,4 +1,3 @@
-
 export interface OcrExtractedData {
   patientName?: string;
   patientId?: string;
@@ -17,13 +16,23 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 // Simulated OCR processing function
 export const processDocumentOcr = async (file: File): Promise<OcrExtractedData> => {
   console.log('Processing document with simulated OCR:', file.name);
-  
-  // Simulate OCR processing time
+
   await delay(1500);
-  
-  // John Patient (Rejected)
-export const getJohnPatientData = (): OcrExtractedData => {
-  const extractedData: OcrExtractedData = {
+
+  // Return different patient data based on filename
+  if (file.name.toLowerCase().includes("david")) return getDavidKumarData();
+  if (file.name.toLowerCase().includes("alice")) return getAliceRobertsData();
+  if (file.name.toLowerCase().includes("priya")) return getPriyaSinghData();
+
+  // Default: John Patient
+  return getJohnPatientData();
+};
+
+// ----------------------- MOCK PATIENT DATA ----------------------------
+
+// John Patient (Rejected)
+const getJohnPatientData = (): OcrExtractedData => {
+  return {
     patientName: 'John Patient',
     patientId: '1',
     hospitalName: 'City General Hospital',
@@ -43,12 +52,11 @@ export const getJohnPatientData = (): OcrExtractedData => {
       serviceDate: 0.96
     }
   };
-  return extractedData;
 };
 
 // David Kumar (Approved)
-export const getDavidKumarData = (): OcrExtractedData => {
-  const extractedData: OcrExtractedData = {
+const getDavidKumarData = (): OcrExtractedData => {
+  return {
     patientName: 'David Kumar',
     patientId: '2',
     hospitalName: 'Apollo Care Hospital',
@@ -68,12 +76,11 @@ export const getDavidKumarData = (): OcrExtractedData => {
       serviceDate: 0.95
     }
   };
-  return extractedData;
 };
 
 // Alice Roberts (Approved)
-export const getAliceRobertsData = (): OcrExtractedData => {
-  const extractedData: OcrExtractedData = {
+const getAliceRobertsData = (): OcrExtractedData => {
+  return {
     patientName: 'Alice Roberts',
     patientId: '3',
     hospitalName: 'GreenLife Wellness',
@@ -93,12 +100,11 @@ export const getAliceRobertsData = (): OcrExtractedData => {
       serviceDate: 0.94
     }
   };
-  return extractedData;
 };
 
 // Priya Singh (Rejected)
-export const getPriyaSinghData = (): OcrExtractedData => {
-  const extractedData: OcrExtractedData = {
+const getPriyaSinghData = (): OcrExtractedData => {
+  return {
     patientName: 'Priya Singh',
     patientId: '4',
     hospitalName: 'GreenLife Clinic',
@@ -117,131 +123,5 @@ export const getPriyaSinghData = (): OcrExtractedData => {
       claimAmount: 0.80,
       serviceDate: 0.83
     }
-  };
-  return extractedData;
-};
-
-// NLP processing for fraud detection
-export const performFraudCheck = async (data: OcrExtractedData): Promise<{
-  isFraudSuspected: boolean;
-  fraudFlags: Array<{
-    type: string;
-    description: string;
-    severity: 'low' | 'medium' | 'high';
-  }>;
-}> => {
-  // Simulate processing delay
-  await delay(800);
-  
-  const fraudFlags = [];
-  let isFraudSuspected = false;
-  
-  // Simple rule-based fraud detection
-  if (data.claimAmount && data.claimAmount > 1000) {
-    fraudFlags.push({
-      type: 'high_amount',
-      description: 'Claim amount is unusually high for this diagnosis',
-      severity: 'medium'
-    });
-    isFraudSuspected = true;
-  }
-  
-  // Check for incomplete information
-  const requiredFields = ['patientName', 'diagnosis', 'treatmentDetails', 'claimAmount'];
-  const missingFields = requiredFields.filter(field => !data[field as keyof OcrExtractedData]);
-  
-  if (missingFields.length > 0) {
-    fraudFlags.push({
-      type: 'missing_info',
-      description: `Missing required information: ${missingFields.join(', ')}`,
-      severity: 'low'
-    });
-  }
-  
-  // Check for low confidence in key fields
-  Object.entries(data.confidence).forEach(([field, confidence]) => {
-    if (confidence < 0.8 && requiredFields.includes(field)) {
-      fraudFlags.push({
-        type: 'low_confidence',
-        description: `Low confidence in extracted ${field} (${(confidence * 100).toFixed(0)}%)`,
-        severity: 'low'
-      });
-    }
-  });
-  
-  return {
-    isFraudSuspected,
-    fraudFlags
-  };
-};
-
-// Policy verification function
-export const verifyPolicyCompliance = async (
-  patientId: string,
-  diagnosis: string,
-  claimAmount: number
-): Promise<{
-  isCompliant: boolean;
-  isPolicyCurrent: boolean;
-  isTreatmentCovered: boolean;
-  isWithinClaimLimit: boolean;
-  remainingCoverage?: number;
-  issues?: string[];
-}> => {
-  // Simulate verification delay
-  await delay(1000);
-  
-  // Mock policy database check
-  const mockPolicies = {
-    '1': {
-      policyNumber: 'POL-123456',
-      expirationDate: '2025-12-31',
-      coverageLimit: 5000,
-      usedCoverage: 750,
-      excludedTreatments: ['cosmetic surgery', 'experimental treatments']
-    }
-  };
-  
-  const policy = mockPolicies[patientId as keyof typeof mockPolicies];
-  const issues: string[] = [];
-  
-  if (!policy) {
-    return {
-      isCompliant: false,
-      isPolicyCurrent: false,
-      isTreatmentCovered: false,
-      isWithinClaimLimit: false,
-      issues: ['Policy not found for this patient']
-    };
-  }
-  
-  // Check if policy is current
-  const isPolicyCurrent = new Date(policy.expirationDate) > new Date();
-  if (!isPolicyCurrent) {
-    issues.push(`Policy expired on ${policy.expirationDate}`);
-  }
-  
-  // Check if treatment is covered
-  const isTreatmentCovered = !policy.excludedTreatments.some(
-    excluded => diagnosis.toLowerCase().includes(excluded.toLowerCase())
-  );
-  if (!isTreatmentCovered) {
-    issues.push('This treatment is excluded from policy coverage');
-  }
-  
-  // Check if within claim limit
-  const remainingCoverage = policy.coverageLimit - policy.usedCoverage;
-  const isWithinClaimLimit = claimAmount <= remainingCoverage;
-  if (!isWithinClaimLimit) {
-    issues.push(`Claim exceeds remaining coverage (${remainingCoverage.toFixed(2)})`);
-  }
-  
-  return {
-    isCompliant: isPolicyCurrent && isTreatmentCovered && isWithinClaimLimit,
-    isPolicyCurrent,
-    isTreatmentCovered,
-    isWithinClaimLimit,
-    remainingCoverage,
-    issues: issues.length > 0 ? issues : undefined
   };
 };
