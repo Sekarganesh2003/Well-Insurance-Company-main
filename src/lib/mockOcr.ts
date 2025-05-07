@@ -21,7 +21,8 @@ export const processDocumentOcr = async (file: File): Promise<OcrExtractedData> 
   // Simulate OCR processing time
   await delay(1500);
   
-  // Mock extracted data with different confidence levels
+  // John Patient (Rejected)
+export const getJohnPatientData = (): OcrExtractedData => {
   const extractedData: OcrExtractedData = {
     patientName: 'John Patient',
     patientId: '1',
@@ -42,7 +43,81 @@ export const processDocumentOcr = async (file: File): Promise<OcrExtractedData> 
       serviceDate: 0.96
     }
   };
+  return extractedData;
+};
 
+// David Kumar (Approved)
+export const getDavidKumarData = (): OcrExtractedData => {
+  const extractedData: OcrExtractedData = {
+    patientName: 'David Kumar',
+    patientId: '2',
+    hospitalName: 'Apollo Care Hospital',
+    diagnosis: 'Type 2 Diabetes',
+    diagnosisCode: 'E11',
+    treatmentDetails: 'Blood Sugar Test, Consultation, Metformin prescription',
+    claimAmount: 300.00,
+    serviceDate: '2025-04-04',
+    confidence: {
+      patientName: 0.96,
+      patientId: 0.95,
+      hospitalName: 0.92,
+      diagnosis: 0.94,
+      diagnosisCode: 0.97,
+      treatmentDetails: 0.90,
+      claimAmount: 0.91,
+      serviceDate: 0.95
+    }
+  };
+  return extractedData;
+};
+
+// Alice Roberts (Approved)
+export const getAliceRobertsData = (): OcrExtractedData => {
+  const extractedData: OcrExtractedData = {
+    patientName: 'Alice Roberts',
+    patientId: '3',
+    hospitalName: 'GreenLife Wellness',
+    diagnosis: 'Migraine',
+    diagnosisCode: 'G43.909',
+    treatmentDetails: 'Neurology consultation, pain management therapy',
+    claimAmount: 220.75,
+    serviceDate: '2025-04-07',
+    confidence: {
+      patientName: 0.97,
+      patientId: 0.95,
+      hospitalName: 0.91,
+      diagnosis: 0.93,
+      diagnosisCode: 0.96,
+      treatmentDetails: 0.89,
+      claimAmount: 0.90,
+      serviceDate: 0.94
+    }
+  };
+  return extractedData;
+};
+
+// Priya Singh (Rejected)
+export const getPriyaSinghData = (): OcrExtractedData => {
+  const extractedData: OcrExtractedData = {
+    patientName: 'Priya Singh',
+    patientId: '4',
+    hospitalName: 'GreenLife Clinic',
+    diagnosis: 'General Health Checkup',
+    diagnosisCode: 'Z00.00',
+    treatmentDetails: 'Blood test, ECG, General consultation',
+    claimAmount: 120.00,
+    serviceDate: '2025-04-01',
+    confidence: {
+      patientName: 0.81,
+      patientId: 0.84,
+      hospitalName: 0.79,
+      diagnosis: 0.76,
+      diagnosisCode: 0.78,
+      treatmentDetails: 0.73,
+      claimAmount: 0.80,
+      serviceDate: 0.83
+    }
+  };
   return extractedData;
 };
 
