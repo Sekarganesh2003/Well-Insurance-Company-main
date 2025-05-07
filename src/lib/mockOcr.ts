@@ -21,72 +21,30 @@ export const processDocumentOcr = async (file: File): Promise<OcrExtractedData> 
   // Simulate OCR processing time
   await delay(1500);
   
-  // Mock extracted data for Sharma (Approved)
-const sharmaData: OcrExtractedData = {
-  patientName: 'Amit Sharma',
-  patientId: '2',
-  hospitalName: 'Apollo Clinic',
-  diagnosis: 'Hypertension',
-  diagnosisCode: 'I10',
-  treatmentDetails: 'BP Monitoring, ECG, Prescription for Amlodipine',
-  claimAmount: 200.00,
-  serviceDate: '2025-04-05',
-  confidence: {
-    patientName: 0.97,
-    patientId: 0.96,
-    hospitalName: 0.91,
-    diagnosis: 0.93,
-    diagnosisCode: 0.95,
-    treatmentDetails: 0.89,
-    claimAmount: 0.94,
-    serviceDate: 0.98
-  }
-};
+  // Mock extracted data with different confidence levels
+  const extractedData: OcrExtractedData = {
+    patientName: 'John Patient',
+    patientId: '1',
+    hospitalName: 'City General Hospital',
+    diagnosis: 'Acute Bronchitis',
+    diagnosisCode: 'J20.9',
+    treatmentDetails: 'Consultation, chest X-ray, prescription for antibiotics and bronchodilators',
+    claimAmount: 475.50,
+    serviceDate: '2025-04-10',
+    confidence: {
+      patientName: 0.95,
+      patientId: 0.97,
+      hospitalName: 0.92,
+      diagnosis: 0.88,
+      diagnosisCode: 0.94,
+      treatmentDetails: 0.82,
+      claimAmount: 0.90,
+      serviceDate: 0.96
+    }
+  };
 
-// Mock extracted data for Kumar (Approved)
-const kumarData: OcrExtractedData = {
-  patientName: 'Raj Kumar',
-  patientId: '3',
-  hospitalName: 'Sunrise Health Center',
-  diagnosis: 'Type 2 Diabetes',
-  diagnosisCode: 'E11',
-  treatmentDetails: 'Blood Sugar Test, Consultation, Metformin',
-  claimAmount: 350.00,
-  serviceDate: '2025-04-03',
-  confidence: {
-    patientName: 0.96,
-    patientId: 0.95,
-    hospitalName: 0.92,
-    diagnosis: 0.94,
-    diagnosisCode: 0.93,
-    treatmentDetails: 0.90,
-    claimAmount: 0.91,
-    serviceDate: 0.95
-  }
+  return extractedData;
 };
-
-// Mock extracted data for Kishore (Rejected)
-const kishoreData: OcrExtractedData = {
-  patientName: 'Vinod Kishore',
-  patientId: '4',
-  hospitalName: 'Noble Health',
-  diagnosis: 'Back Pain',
-  diagnosisCode: 'M54.5',
-  treatmentDetails: 'Consultation, Painkillers',
-  claimAmount: 150.00,
-  serviceDate: '2025-04-09',
-  confidence: {
-    patientName: 0.82,
-    patientId: 0.80,
-    hospitalName: 0.78,
-    diagnosis: 0.74,
-    diagnosisCode: 0.75,
-    treatmentDetails: 0.70,
-    claimAmount: 0.76,
-    serviceDate: 0.79
-  }
-};
-
 
 // NLP processing for fraud detection
 export const performFraudCheck = async (data: OcrExtractedData): Promise<{
