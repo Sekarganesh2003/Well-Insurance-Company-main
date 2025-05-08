@@ -52,26 +52,6 @@ const mockPatients: Record<string, OcrExtractedData> = {
       claimAmount: 0.91,
       serviceDate: 0.93
     }
-  },
-  "3": {
-    patientName: 'Charlie Patient',
-    patientId: '3',
-    hospitalName: 'Wellness Clinic',
-    diagnosis: 'Experimental Treatments',
-    diagnosisCode: 'Z51.89',
-    treatmentDetails: 'Gene therapy',
-    claimAmount: 5100.00,
-    serviceDate: '2025-04-15',
-    confidence: {
-      patientName: 0.89,
-      patientId: 0.93,
-      hospitalName: 0.90,
-      diagnosis: 0.87,
-      diagnosisCode: 0.89,
-      treatmentDetails: 0.83,
-      claimAmount: 0.86,
-      serviceDate: 0.91
-    }
   }
 };
 
