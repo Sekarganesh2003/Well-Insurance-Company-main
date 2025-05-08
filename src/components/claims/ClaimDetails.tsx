@@ -110,7 +110,7 @@ const ClaimDetails: React.FC<ClaimDetailsProps> = ({ claim, isReviewMode = false
               </div>
               <div className="space-y-1">
                 <p className="text-sm text-muted-foreground">Claim Amount</p>
-                <p className="font-medium">₹{claim.claimAmount.toLocaleString('$')}</p>
+                <p className="font-medium">${claim.claimAmount.toLocaleString('en-IN')}</p>
               </div>
             </CardContent>
           </Card>
