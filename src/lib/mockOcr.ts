@@ -14,8 +14,28 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const mockPatients: Record<string, OcrExtractedData> = {
   "1": {
-    patientName: 'Alice Patient',
+    patientName: 'John Patient',
     patientId: '1',
+    hospitalName: 'City General Hospital',
+    diagnosis: 'Acute Bronchitis',
+    diagnosisCode: 'J20.9',
+    treatmentDetails: 'Consultation, chest X-ray, antibiotics',
+    claimAmount: 475.50,
+    serviceDate: '2025-04-10',
+    confidence: {
+      patientName: 0.95,
+      patientId: 0.97,
+      hospitalName: 0.92,
+      diagnosis: 0.88,
+      diagnosisCode: 0.94,
+      treatmentDetails: 0.82,
+      claimAmount: 0.90,
+      serviceDate: 0.96
+    }
+  },
+  "2": {
+    patientName: 'Alice Patient',
+    patientId: '2',
     hospitalName: 'Metro Care Center',
     diagnosis: 'Minor Injury',
     diagnosisCode: 'S00.0',
@@ -33,9 +53,9 @@ const mockPatients: Record<string, OcrExtractedData> = {
       serviceDate: 0.97
     }
   },
-  "2": {
+  "3": {
     patientName: 'Bob Patient',
-    patientId: '2',
+    patientId: '3',
     hospitalName: 'Sunrise Hospital',
     diagnosis: 'Cosmetic Surgery',
     diagnosisCode: 'Z41.1',
@@ -51,6 +71,26 @@ const mockPatients: Record<string, OcrExtractedData> = {
       treatmentDetails: 0.79,
       claimAmount: 0.91,
       serviceDate: 0.93
+    }
+  },
+  "4": {
+    patientName: 'Charlie Patient',
+    patientId: '4',
+    hospitalName: 'Wellness Clinic',
+    diagnosis: 'Experimental Treatments',
+    diagnosisCode: 'Z51.89',
+    treatmentDetails: 'Gene therapy',
+    claimAmount: 5100.00,
+    serviceDate: '2025-04-15',
+    confidence: {
+      patientName: 0.89,
+      patientId: 0.93,
+      hospitalName: 0.90,
+      diagnosis: 0.87,
+      diagnosisCode: 0.89,
+      treatmentDetails: 0.83,
+      claimAmount: 0.86,
+      serviceDate: 0.91
     }
   }
 };
