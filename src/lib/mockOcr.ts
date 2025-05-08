@@ -14,28 +14,8 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const mockPatients: Record<string, OcrExtractedData> = {
   "1": {
-    patientName: 'John Patient',
-    patientId: '1',
-    hospitalName: 'City General Hospital',
-    diagnosis: 'Acute Bronchitis',
-    diagnosisCode: 'J20.9',
-    treatmentDetails: 'Consultation, chest X-ray, antibiotics',
-    claimAmount: 475.50,
-    serviceDate: '2025-04-10',
-    confidence: {
-      patientName: 0.95,
-      patientId: 0.97,
-      hospitalName: 0.92,
-      diagnosis: 0.88,
-      diagnosisCode: 0.94,
-      treatmentDetails: 0.82,
-      claimAmount: 0.90,
-      serviceDate: 0.96
-    }
-  },
-  "2": {
     patientName: 'Alice Patient',
-    patientId: '2',
+    patientId: '1',
     hospitalName: 'Metro Care Center',
     diagnosis: 'Minor Injury',
     diagnosisCode: 'S00.0',
@@ -53,9 +33,9 @@ const mockPatients: Record<string, OcrExtractedData> = {
       serviceDate: 0.97
     }
   },
-  "3": {
+  "2": {
     patientName: 'Bob Patient',
-    patientId: '3',
+    patientId: '2',
     hospitalName: 'Sunrise Hospital',
     diagnosis: 'Cosmetic Surgery',
     diagnosisCode: 'Z41.1',
@@ -73,9 +53,9 @@ const mockPatients: Record<string, OcrExtractedData> = {
       serviceDate: 0.93
     }
   },
-  "4": {
+  "3": {
     patientName: 'Charlie Patient',
-    patientId: '4',
+    patientId: '3',
     hospitalName: 'Wellness Clinic',
     diagnosis: 'Experimental Treatments',
     diagnosisCode: 'Z51.89',
